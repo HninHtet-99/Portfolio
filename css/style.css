@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    height: 100vh;
+}
+.top-nav{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+}
+.nav-link{
+    padding: 0.5rem 1.1rem !important;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    
+}
+.nav-link::before{
+    content: attr(data-text);
+}
+.nav-link.current-page{
+    color: none;
+    background-image: url(../img/wave.png);
+    background-repeat: repeat-x;
+    -webkit-background-clip: text;
+    animation: animateWave 2s linear infinite;
+    transition: 0.5s;
+}
+.nav-link:hover::before{
+    background-image: url(../img/wave.png);
+    background-repeat: repeat-x;
+    -webkit-background-clip: text;
+    animation: animateWave 2s linear infinite;
+    transition: 0.5s;
+}
+@keyframes animateWave {
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: 200px;
+    }
+}
+.home{
+    background-color: #030303;
+}
+#particles-js{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.particles-js-canvas-el{
+    position: absolute;
+}
+.intro-txt{
+    color: rgba(255, 255, 255, 0.2);
+}
+.name{
+    color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(90deg,#030303,#fff,#030303);
+    font-size: 100px;
+    font-weight: bold;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    animation: animationTxt 12s ease-in-out infinite;
+}
+@keyframes animationTxt {
+    0%{
+        background-position: -1000px;
+    }
+    100%{
+        background-position: 1000px;
+    }
+}
+.socialAccounts{
+    position: absolute;
+    bottom: 200px;
+    display: flex;
+    align-items:flex-start;
+    flex-direction: column;
+
+}
+.socialAccounts a{
+    text-decoration: none;
+    color: #f5f5f5;
+}
+.scroll-to-next{
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.scroll-to-next-icon{
+    transform: rotate(-45deg);
+}
+@media screen and (max-width: 760px) {
+    .intro-txt .name{
+        font-size: 60px;
+    }
+    
+}
+@media screen and (max-width: 380px) {
+    .intro-txt .name{
+        font-size: 44px;
+        animation: animationTxt 20s ease-in-out infinite;
+    }
+    
+}
