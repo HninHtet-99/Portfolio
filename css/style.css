@@ -79,7 +79,7 @@ body{
 }
 .social-accounts{
     position: absolute;
-    bottom: 100px;
+    bottom: 80px;
     right: 40px;
     display: flex;
     align-items:flex-start;
@@ -171,12 +171,41 @@ body{
     align-items: center;
     flex-direction: column;
 }
+.scroll-to-next-text{
+    color: rgba(255, 255, 255, 0.2);
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: uppercase;
+}
 .scroll-to-next-icon{
     transform: rotate(-45deg);
 }
+.about{
+    background-color: #040404;
+    position: relative;
+    overflow: hidden;
+}
+.about .about-text{
+   position: relative;
+    color: #00cefe;
+}
+.about-text span{
+    display: inline-block;
+    /* position: relative; */
+    /* animation: animate-about-text 5s ease-in-out forwards; */
+}
+/* @keyframes animate-about-text {
+    to{
+        top: 0;
+        left: 0;
+    }
+} */
 @media screen and (max-width: 760px) {
     .intro-txt .name{
         font-size: 60px;
+    }
+    .social-accounts{
+        display: none;
     }
     
 }
