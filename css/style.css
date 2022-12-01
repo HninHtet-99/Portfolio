@@ -9,6 +9,7 @@
 body{
     height: 100vh;
 }
+/* nav */
 .top-nav{
     position: absolute;
     z-index: 1;
@@ -47,6 +48,7 @@ body{
         background-position: 200px;
     }
 }
+/* home */
 .home{
     background-color: #030303;
 }
@@ -185,12 +187,15 @@ body{
 .scroll-to-next-icon{
     transform: rotate(-45deg);
 }
+/* about */
 .about{
-    background-color: #040404;
+    background-color: #030303;
     position: relative;
     overflow: hidden;
 }
-
+.skills svg rect{
+fill: none !important;
+}
 .about .about-text{
    position: relative;
     color: #00cefe;
@@ -198,8 +203,79 @@ body{
 .about-text span{
     display: inline-block;
 }
- 
+/* projects */
+.projects .card{
+    background: linear-gradient(to right, #d9a7c7, #fffcdc); 
+}
+.projects .card:nth-child(odd) .card-body{
+    position: absolute;
+    width: 60%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    line-height: 1em;
+    left: 20%;
+}
+.projects .card:nth-child(even) .card-body{
+    position: absolute;
+    width: 60%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    line-height: 1em;
+    right: 20%;
+}
+.projects .card:nth-child(odd):hover .card-body{
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+}
+.projects .card:nth-child(even):hover .card-body{
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.projects .card img{
+    transition: 0.5s;
+}
+.projects .card:hover img{
+    left: 40%;
+    transform: translateX(60%);
+}
+.projects .card:nth-child(even):hover img{
+    transform: translateX(-60%);
+}
 
+
+
+
+
+
+
+
+
+@media screen and (max-width: 820px) {
+    .projects .card{
+        width: 100% !important;
+        transition: 0.5s;
+    }
+    .projects .card:hover{
+        height: 300px !important;
+    }
+    .projects .card:hover img{
+        z-index: 1;
+        transform: translateY(-70%) !important;
+    }
+    .projects .card .card-body{
+        width: 100% !important;
+        top: 0% !important;
+        left: 0 !important;
+        
+    }
+    .projects .card:hover .card-body{
+        top: 35% !important;
+    }
+}
 @media screen and (max-width: 760px) {
     .intro-txt .name{
         font-size: 60px;
@@ -210,16 +286,22 @@ body{
     .about-image,.about-text{
         width: 100%;
     }
-    /* .skills svg{
-        width: 100% !important;
-         
-     } */
-     
+    .projects .card:hover .card-body{
+        top: 10% !important;
+    }
+   
 }
 @media screen and (max-width: 420px) {
     .intro-txt .name{
-        font-size: 43px;
+        font-size: 42px;
         animation: animationTxt 20s ease-in-out infinite;
     }
-    
+    .projects .card:hover .card-body{
+        top: 20% !important;
+    }
+}
+@media screen and (max-width: 320px) {
+    .projects .card:hover .card-body{
+        top: 15% !important;
+    }
 }
