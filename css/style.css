@@ -30,14 +30,14 @@ body{
     background-image: url(../img/wave.png);
     background-repeat: repeat-x;
     -webkit-background-clip: text;
-    animation: animateWave 2s linear infinite;
+    animation: animateWave 2.5s linear infinite;
     transition: 0.5s;
 }
 .nav-link:hover::before{
     background-image: url(../img/wave.png);
     background-repeat: repeat-x;
     -webkit-background-clip: text;
-    animation: animateWave 2s linear infinite;
+    animation: animateWave 2.5s linear infinite;
     transition: 0.5s;
 }
 @keyframes animateWave {
@@ -204,6 +204,9 @@ fill: none !important;
     display: inline-block;
 }
 /* projects */
+.projects{
+    background-color: #030303;
+}
 .projects .card{
     background: linear-gradient(to right, #d9a7c7, #fffcdc); 
 }
@@ -246,11 +249,54 @@ fill: none !important;
     transform: translateX(-60%);
 }
 
-
-
-
-
-
+/* contact */
+.contact{
+    background-color: #030303;
+}
+.contact-text{
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+.contact-line{
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+.contact-line p{
+    height: 35px;
+    line-height: 53px;
+    transition: all 0.5s ease-in-out;
+}
+.contact-line:nth-child(odd){
+    transform: skew(60deg, -30deg) scaleY(0.667);
+}
+.contact-line:nth-child(even){
+    transform: skew(0deg, -30deg) scaleY(1.333);
+}
+.contact-text:hover p{
+    transform: translate(0, -50px);
+}
+.contact-line:nth-child(1){
+    left: 29px;
+}
+.contact-line:nth-child(2){
+    left: 58px;
+}
+.contact-line:nth-child(3){
+    left: 87px;
+}
+.contact-line:nth-child(4){
+    left: 116px;
+}
+/* .contact-line:nth-child(5){
+    left: 135px;
+} */
+/* .second-contact-text{
+    width: 10em;
+    margin-top: 10rem;
+} */
 
 
 
@@ -274,6 +320,16 @@ fill: none !important;
     }
     .projects .card:hover .card-body{
         top: 35% !important;
+    }
+    .contact-text{
+        font-size: 30px ;
+    }
+    .contact-line{
+        height: 35px;
+    }
+    .contact-line p{
+        height: 20px;
+        line-height: 50px;
     }
 }
 @media screen and (max-width: 760px) {
