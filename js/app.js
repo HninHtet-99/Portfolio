@@ -1,3 +1,66 @@
+/* navbar fixed */
+let screenHeight = $(window).height();
+$(window).scroll(function(){
+    let currentPosition = $(this).scrollTop();
+    if (currentPosition >= screenHeight-100) {
+        $('.top-nav').addClass('top-nav-scroll');
+    }else{
+        $('.top-nav').removeClass('top-nav-scroll');
+        setActive("home")
+    }
+})
+/* chg icon in nav */
+// $('.navbar-toggler').click(function(){
+//     let result = $(".navbar-collapse").hasClass('show');
+//     console.log(result);
+//     if (result) {
+//         $('.menu-icon').addClass('fa-bars').removeClass('fa-xmark')
+//     }else{
+//         $('.menu-icon').addClass('fa-xmark').removeClass('fa-bars')
+
+//     }
+// })
+/* set avtive */
+function setActive(current) {
+    $('.nav-link').removeClass('current-page');
+    $(`.nav-link[href="#${current}"]`).addClass("current-page");
+    
+}
+function navScroll() {
+    let currentSection = $('section[id]');
+    currentSection.waypoint(function(direction){
+        if (direction == "down") {
+            let currentId = $(this.element).attr('id');
+            setActive(currentId);
+            
+        }
+        
+    },{
+        offset:100
+    });
+    currentSection.waypoint(function(direction){
+        if (direction == "up") {
+            let currentId = $(this.element).attr('id');
+            setActive(currentId);
+            
+        }
+    },{
+        offset:-150
+    })
+}
+navScroll();
+/* wow */
+wow = new WOW(
+    {
+    boxClass:     'wow',     
+    animateClass: 'animate__animated',
+    offset:       0,         
+    mobile:       true,      
+    live:         true       
+  }
+  )
+  wow.init();
+
 /* svg tag cloud */
 var entries = [ 
    

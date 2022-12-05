@@ -6,8 +6,12 @@
     box-sizing:border-box;
     font-family: 'Old Standard TT', serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
-    height: 100vh;
+    height: 300vh;
+    background-color: #030303;
 }
 /* nav */
 .top-nav{
@@ -15,10 +19,27 @@ body{
     z-index: 1;
     top: 0;
 }
+.top-nav-scroll{
+    position: fixed;
+    background-color: #ffffff10;
+    /* animation: top-nav-animation 1s linear; */
+}
+@keyframes top-nav-animation {
+    from{
+        transform: translateY(-100px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+.navbar-toggler:focus{
+    box-shadow: none !important;
+}
+
 .nav-link{
     padding: 0.5rem 1.1rem !important;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.5);
+    /* color: rgba(255, 255, 255, 0.5); */
     text-transform: uppercase;
     
 }
@@ -27,14 +48,14 @@ body{
 }
 .nav-link.current-page{
     color: none;
-    background-image: url(../img/wave.png);
+    background-image: url(../img/wave1.png);
     background-repeat: repeat-x;
     -webkit-background-clip: text;
     animation: animateWave 2.5s linear infinite;
     transition: 0.5s;
 }
 .nav-link:hover::before{
-    background-image: url(../img/wave.png);
+    background-image: url(../img/wave1.png);
     background-repeat: repeat-x;
     -webkit-background-clip: text;
     animation: animateWave 2.5s linear infinite;
@@ -48,24 +69,31 @@ body{
         background-position: 200px;
     }
 }
-/* home */
-.home{
-    background-color: #030303;
+.top-nav-scroll .nav-link.current-page{
+    color: none;
+    background-image: url(../img/wave1.png);
+    background-repeat: repeat-x;
+    -webkit-background-clip: text;
+    animation: animateWave 2.5s linear infinite;
+    transition: 0.5s;
 }
+/* home */
+
 #particles-js{
     height: 100vh;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    /* position: fixed;
-    width: 100%; */
+    align-items: center; */
+    position: fixed;
+    width: 100%;
 
 }
-.particles-js-canvas-el{
+/* .particles-js-canvas-el{
     position: absolute;
-}
+} */
 .intro-txt{
     color: rgba(255, 255, 255, 0.2);
+    margin-top: 25%;
 }
 .name{
     color: rgba(255, 255, 255, 0.1);
@@ -189,7 +217,7 @@ body{
 }
 /* about */
 .about{
-    background-color: #030303;
+    
     position: relative;
     overflow: hidden;
 }
@@ -204,11 +232,14 @@ fill: none !important;
     display: inline-block;
 }
 /* projects */
-.projects{
-    background-color: #030303;
-}
+
 .projects .card{
-    background: linear-gradient(to right, #d9a7c7, #fffcdc); 
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .projects .card:nth-child(odd) .card-body{
     position: absolute;
@@ -229,6 +260,7 @@ fill: none !important;
     right: 20%;
 }
 .projects .card:nth-child(odd):hover .card-body{
+    
     opacity: 1;
     visibility: visible;
     left: 0;
@@ -250,9 +282,7 @@ fill: none !important;
 }
 
 /* contact */
-.contact{
-    background-color: #030303;
-}
+
 .contact-text{
     font-size: 50px;
     font-weight: 900;
@@ -290,26 +320,24 @@ fill: none !important;
 .contact-line:nth-child(4){
     left: 116px;
 }
-/* .contact-line:nth-child(5){
-    left: 135px;
-} */
-/* .second-contact-text{
-    width: 10em;
-    margin-top: 10rem;
-} */
-
-
 
 @media screen and (max-width: 820px) {
+    .navbar-collapse{
+        background-color: #ffffff10;
+    }
+    .intro-txt{
+        margin-top: 70%;
+    }
     .projects .card{
         width: 100% !important;
         transition: 0.5s;
     }
     .projects .card:hover{
         height: 300px !important;
+        z-index: 1 !important;
     }
     .projects .card:hover img{
-        z-index: 1;
+        
         transform: translateY(-70%) !important;
     }
     .projects .card .card-body{
@@ -332,7 +360,10 @@ fill: none !important;
         line-height: 50px;
     }
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
+    /* .intro-txt{
+       
+    } */
     .intro-txt .name{
         font-size: 60px;
     }
@@ -348,6 +379,9 @@ fill: none !important;
    
 }
 @media screen and (max-width: 420px) {
+    .intro-txt{
+        margin-top: 75%;
+    }
     .intro-txt .name{
         font-size: 42px;
         animation: animationTxt 20s ease-in-out infinite;
