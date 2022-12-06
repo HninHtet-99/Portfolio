@@ -77,28 +77,41 @@ body{
     animation: animateWave 2.5s linear infinite;
     transition: 0.5s;
 }
+
+#drawSvg{
+    width: 30%;
+    height: 30%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 0;
+}
+
 /* home */
 
 #particles-js{
     height: 100vh;
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    align-items: center; */
-    position: fixed;
-    width: 100%;
+    align-items: center;
+    /* position: fixed; */
+    /* width: 100%; */
 
 }
-/* .particles-js-canvas-el{
+.particles-js-canvas-el{
     position: absolute;
-} */
+}
 .intro-txt{
     color: rgba(255, 255, 255, 0.2);
-    margin-top: 25%;
+    /* margin-top: 20%; */
 }
 .name{
     color: rgba(255, 255, 255, 0.1);
     background: linear-gradient(90deg,#030303,#fff,#030303);
-    font-size: 100px;
+    font-size: 60px;
     font-weight: bold;
     -webkit-background-clip: text;
     text-transform: uppercase;
@@ -325,9 +338,6 @@ fill: none !important;
     .navbar-collapse{
         background-color: #ffffff10;
     }
-    .intro-txt{
-        margin-top: 70%;
-    }
     .projects .card{
         width: 100% !important;
         transition: 0.5s;
@@ -361,9 +371,7 @@ fill: none !important;
     }
 }
 @media screen and (max-width: 768px) {
-    /* .intro-txt{
-       
-    } */
+  
     .intro-txt .name{
         font-size: 60px;
     }
@@ -379,9 +387,6 @@ fill: none !important;
    
 }
 @media screen and (max-width: 420px) {
-    .intro-txt{
-        margin-top: 75%;
-    }
     .intro-txt .name{
         font-size: 42px;
         animation: animationTxt 20s ease-in-out infinite;

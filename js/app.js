@@ -49,6 +49,16 @@ function navScroll() {
     })
 }
 navScroll();
+/* draw svg */
+let $doc = $(document),
+        $win = $(window),
+        $svg = $('#drawSvg').drawsvg(),
+        max= $doc.height() - $win.height();
+        $win.on('scroll',function(){
+            var p = $win.scrollTop() / max;
+            $svg.drawsvg('progress',p);
+        })
+
 /* wow */
 wow = new WOW(
     {
