@@ -20,6 +20,7 @@ $(window).scroll(function(){
 
 //     }
 // })
+
 /* set avtive */
 function setActive(current) {
     $('.nav-link').removeClass('current-page');
@@ -52,7 +53,9 @@ navScroll();
 /* draw svg */
 let $doc = $(document),
         $win = $(window),
-        $svg = $('#drawSvg').drawsvg(),
+        $svg = $('#drawSvg').drawsvg({
+            duration: 2000,
+        }),
         max= $doc.height() - $win.height();
         $win.on('scroll',function(){
             var p = $win.scrollTop() / max;
@@ -71,6 +74,15 @@ wow = new WOW(
   )
   wow.init();
 
+/* rotate intro text */
+$('.intro-txt').on('mousemove',function(e){
+    centerX = $(this).width()/2;
+    let moveX = centerX - e.offsetX;
+    $(this).css({
+        'transform': "perspective(500px) rotateY("+moveX/30+"deg)"
+    })
+    
+})
 /* svg tag cloud */
 var entries = [ 
    

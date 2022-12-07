@@ -50,6 +50,7 @@ body{
     color: none;
     background-image: url(../img/wave1.png);
     background-repeat: repeat-x;
+    background-clip: text;
     -webkit-background-clip: text;
     animation: animateWave 2.5s linear infinite;
     transition: 0.5s;
@@ -57,6 +58,7 @@ body{
 .nav-link:hover::before{
     background-image: url(../img/wave1.png);
     background-repeat: repeat-x;
+    background-clip: text;
     -webkit-background-clip: text;
     animation: animateWave 2.5s linear infinite;
     transition: 0.5s;
@@ -73,6 +75,7 @@ body{
     color: none;
     background-image: url(../img/wave1.png);
     background-repeat: repeat-x;
+    background-clip: text;
     -webkit-background-clip: text;
     animation: animateWave 2.5s linear infinite;
     transition: 0.5s;
@@ -88,24 +91,31 @@ body{
     bottom: 0;
     margin: auto;
     z-index: 0;
+   
 }
 
 /* home */
+/* .home{ */
+    /* display: flex;
+    justify-content: center; */
 
-#particles-js{
+/* } */
+/* #particles-js{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* position: fixed; */
-    /* width: 100%; */
 
 }
 .particles-js-canvas-el{
     position: absolute;
-}
+    
+} */
 .intro-txt{
+    width: 50%;
     color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    margin: 0 auto;
     /* margin-top: 20%; */
 }
 .name{
@@ -113,6 +123,7 @@ body{
     background: linear-gradient(90deg,#030303,#fff,#030303);
     font-size: 60px;
     font-weight: bold;
+    background-clip: text;
     -webkit-background-clip: text;
     text-transform: uppercase;
     animation: animationTxt 12s ease-in-out infinite;
@@ -227,7 +238,157 @@ body{
 }
 .scroll-to-next-icon{
     transform: rotate(-45deg);
+    
 }
+.circle{
+    position: absolute;
+    border-radius: 50%;
+}
+.orbitPathCentered{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.circle01{
+    right: 8%;
+    top: 3vh;
+    width: 18vw;
+    padding-top: 18vw;
+    transform-origin: 40% 50%;
+    background: linear-gradient(#f439d6,#f42b71);
+    animation: rotateCircle 7s linear infinite;
+}
+.orbiting-circle01{
+    width: 3.5vw;
+    padding-top: 3.5vw;
+    margin-top: 0;
+    background: linear-gradient(#f536d0,#ab02f3);
+}
+.border-plus{
+    border: 1px solid #4fe3ff;
+    z-index: -1;
+}
+.orbitPath01-border{
+    top: 50vh;
+    left: 55%;
+    width: 24vw;
+    height: 24vw;
+    animation: rotatePath 50s linear infinite;
+}
+.orbitPath01{
+    top: 50vh;
+    left: 55%;
+    z-index: 0;
+    width: 24vw;
+    height: 24vw;
+    animation: rotatePath 50s linear infinite;
+}
+.orbitPath01::before{
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    content: "";
+    width: 5vw;
+    padding-top: 5vw;
+    left: 0;
+    transform: rotateX(-50%);
+    background: linear-gradient(#f2e91b,#b4ff2f);
+}
+.orbitPath02-border{
+    top: calc(50vh + 12vw);
+    left: calc(55% + 12vw);
+    width: 18vw;
+    height: 18vw;
+    animation: rotatePathInside 30s linear infinite;
+}
+.orbitPath02-border::before{
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    content: "";
+    width: 2vw;
+    padding-top: 2vw;
+    bottom: 0;
+    transform: translateY(50%);
+    background: linear-gradient(#4ee0f8,#3ba2fe);
+}
+.circle02{
+    top: calc(50vh + 12vw);
+    left: calc(55% + 12vw);
+    z-index: 1;
+    width: 6vw;
+    padding-top: 6vw;
+    background: linear-gradient(#4fe3ff,#9117ff);
+    transform-origin: 48% 48%;
+    animation: rotatePathInside 30s linear infinite;
+}
+.border-orange{
+    border: 1px solid deepskyblue;
+    z-index: -1;
+}
+.circle03{
+    top: 5%;
+    letter-spacing: 35%;
+    width: 25vw;
+    height: 25vw;
+    transform-origin: 46% 50%;
+    animation: rotateBob 30s linear infinite;
+}
+.circle03::after{
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    content: "";
+    left: calc(50% - 2.5vw);
+    top: calc(0% - 2.5vw);
+    width: 5vw;
+    padding-top: 5vw;
+    background: linear-gradient(#ff6d0f,#ff2300);
+}
+.circle04{
+    right: 90%;
+    top: 70%;
+    width: 5vw;
+    padding-top: 5vw;
+    top: 40% 50%;
+    background: linear-gradient(#fde213,#ef9004);
+    animation: rotateBob 2s linear infinite;
+}
+@keyframes rotateCircle{
+    0%{
+      transform: rotateZ(0deg);
+    }
+    100%{
+      transform: rotateZ(360deg);
+    }
+  }
+  @keyframes rotatePath{
+    0%{
+      transform: rotateZ(0deg);
+    }
+    100%{
+      transform: rotateZ(360deg);
+    }
+  }
+  @keyframes rotatePathInside{
+    0%{
+      transform: translateX(-50%) translateY(-50%) rotateZ(0deg);
+    }
+    100%{
+      transform: translateX(-50%) translateY(-50%) rotateZ(360deg);
+    }
+  }
+  @keyframes rotateBob{
+    0%{
+      transform: translateY(0) rotateZ(0deg);
+    }
+    50%{
+      transform: translateY(-3vh) rotateZ(180deg);
+    }
+    100%{
+      transform: translateY(0) rotateZ(360deg);
+    }
+  }
 /* about */
 .about{
     
@@ -338,6 +499,24 @@ fill: none !important;
     .navbar-collapse{
         background-color: #ffffff10;
     }
+    #drawSvg{
+        top: 360px;
+    }
+    .intro-txt{
+        width: 100%;
+    }
+    .orbitPath01-border{
+        left: 70%;
+    }
+    .orbitPath01{
+        left: 70%
+    }
+    .orbitPath02-border{
+        left: calc(70% + 12vw)
+    }
+    .circle02{
+        left: calc(70% + 12vw)
+    }
     .projects .card{
         width: 100% !important;
         transition: 0.5s;
@@ -371,7 +550,9 @@ fill: none !important;
     }
 }
 @media screen and (max-width: 768px) {
-  
+    #drawSvg{
+        top: 240px;
+    }
     .intro-txt .name{
         font-size: 60px;
     }
@@ -387,6 +568,9 @@ fill: none !important;
    
 }
 @media screen and (max-width: 420px) {
+    #drawSvg{
+        left: -90px;
+    }
     .intro-txt .name{
         font-size: 42px;
         animation: animationTxt 20s ease-in-out infinite;
