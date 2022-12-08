@@ -419,74 +419,7 @@ body {
 .about-text span {
   display: inline-block;
 }
-/* .box div{
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: transparent;
-    border: 1px solid #00cefe;
-}
-.box div:nth-child(1){
-    top: 12%;
-    left: 42%;
-    animation: animateBox 10s linear infinite;
-}
-.box div:nth-child(2){
-    top: 70%;
-    left: 50%;
-    animation: animateBox 7s linear infinite;
-}
-.box div:nth-child(3){
-    top: 17%;
-    left: 6%;
-    animation: animateBox 9s linear infinite;
-}
-.box div:nth-child(4){
-    top: 28%;
-    left: 60%;
-    animation: animateBox 10s linear infinite;
-}
-.box div:nth-child(5){
-    top: 67%;
-    left: 10%;
-    animation: animateBox 6s linear infinite;
-}
-.box div:nth-child(6){
-    top: 80%;
-    left: 70%;
-    animation: animateBox 12s linear infinite;
-}
-.box div:nth-child(7){
-    top: 60%;
-    left: 80%;
-    animation: animateBox 15s linear infinite;
-}
-.box div:nth-child(8){
-    top: 32%;
-    left: 25%;
-    animation: animateBox 16s linear infinite;
-}
-.box div:nth-child(9){
-    top: 90%;
-    left: 25%;
-    animation: animateBox 9s linear infinite;
-}
-.box div:nth-child(10){
-    top: 20%;
-    left: 80%;
-    animation: animateBox 5s linear infinite;
-}
-@keyframes animateBox {
-    0%{
-        transform: scale(0) translateY(0) rotate(0);
-        opacity: 1;
-    }
-    100%{
-        transform: scale(1) translateY(-90px) rotate(360deg);
-        opacity: 0;
-    }
-} */
+
 .box{
     position: absolute;
 }
@@ -540,8 +473,8 @@ body {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
+  /* -webkit-backdrop-filter: blur(5px); */
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .projects .card:nth-child(odd) .card-body {
@@ -582,12 +515,103 @@ body {
 .projects .card:nth-child(even):hover img {
   transform: translateX(-60%);
 }
+.card-body .btn-view{
+  position: relative;
+  width: 155px;
+  height: 50px;
+  /* margin: 5px; */
+  display: flex;
+}
+.card-body .btn-view a{
+position: absolute;
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+top: 0;
+left: 0;
+background: rgba(255,255,255,0.05);
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 30px;
+color: #fff;
+z-index: 1;
+text-decoration: none;
+transition: 0.5s;
+overflow: hidden;
+backdrop-filter: blur(15px) !important;
+}
+.card-body .btn-view:hover a{
+letter-spacing: 3px;
+}
+.card-body .btn-view a::before{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 50%;
+height: 100%;
+background: linear-gradient(to left, rgba(255,255,255,0.15),transparent);
+transform: skewX(45deg) translateX(0);
+transition: 0.5s;
+}
+.card-body .btn-view:hover a::before{
+transform: skewX(45deg) translateX(200%);
+}
+.card-body .btn-view::before{
+content: '';
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+bottom: -5px;
+width: 30px;
+height: 10px;
+background: #00ff00;
+border-radius: 10px;
+transition: 0.5s;
+transition-delay: 0s;
+}
+.card-body .btn-view:hover::before{
+bottom: 0;
+height: 50%;
+width: 80%;
+border-radius: 30px;
+transition-delay: 0.5s;
+}
+.card-body .btn-view::after{
+content: '';
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+top: -5px;
+width: 30px;
+height: 10px;
+background: #00ff00;
+border-radius: 10px;
+transition: 0.5s;
+transition-delay: 0s;
+}
+.card-body .btn-view:hover::after{
+top: 0;
+height: 50%;
+width: 80%;
+border-radius: 30px;
+transition-delay: 0.5s;
+}
+.card-body .btn-view:nth-child(1)::before,
+.card-body .btn-view:nth-child(1)::after{
+  background: #2bd2ff;
+  box-shadow: 0 0 5px #2bd2ff,
+              0 0 15px #2bd2ff,
+              0 0 30px #2bd2ff,
+              0 0 60px #2bd2ff;
+
+}
 .parallel-img{
   position: absolute;
   overflow: hidden;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   width: 100%;
   min-height: 150vh;
 }
@@ -599,72 +623,8 @@ body {
   height: 100%;
   object-fit: cover;
 }
-/* .parallel-img img:nth-child(1){
-  
-  top: 0px;
-  left: 0;
-}
-.parallel-img img:nth-child(2){
-  
-  top: -200px;
-  left: 0;
-}
-.parallel-img img:nth-child(3){
-  
-  top: -200px;
-  left: 0;
-}
-.parallel-img img:nth-child(4){
-  
-  bottom: -70px;
-  right: 0;
-}
-.parallel-img img:nth-child(5){
-  
-  right: 280px;
-  top: 1000px;
-}
-.parallel-img img:nth-child(6){
-  
-  bottom: -350px;
-  left: 0;
-}
-.parallel-img img:nth-child(7){
-  
-  top: 1000px;
-  right: 0;
-}
-.parallel-img img:nth-child(8){
-  
-  top: 1000px;
-  right: 0;
-}
-.parallel-img img:nth-child(9){
-  
-  top: 500px;
-  left: 0;
-}
-.parallel-img img:nth-child(10){
-  
-  top: -200px;
-  left: 0;
-}
-.parallel-img img:nth-child(11){
-  
-  top: 50px;
-  right: 0;
-} */
-/* .parallel-img img:nth-child(12){
-  position: absolute;
-  top: 240px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
 
 /* contact */
-
 .contact-text {
   font-size: 50px;
   font-weight: 900;
@@ -745,7 +705,7 @@ body {
     transition: 0.5s;
   }
   .projects .card:hover {
-    height: 300px !important;
+    height: 310px !important;
     z-index: 1 !important;
   }
   .projects .card:hover img {
@@ -759,6 +719,12 @@ body {
   .projects .card:hover .card-body {
     top: 35% !important;
   }
+  .card-body .btn-view{
+    width: 140px;
+  }
+  .card-body .btn-view:hover a{
+    letter-spacing: 1px;
+    }
   .contact-text {
     font-size: 30px;
   }
@@ -785,7 +751,7 @@ body {
     width: 100%;
   }
   .projects .card:hover .card-body {
-    top: 10% !important;
+    top: 36% !important;
   }
 }
 @media screen and (max-width: 420px) {
@@ -799,9 +765,17 @@ body {
   .projects .card:hover .card-body {
     top: 20% !important;
   }
+  .card-body .btn-view{
+    font-size: 16px;
+    width: 140px;
+  }
 }
 @media screen and (max-width: 320px) {
   .projects .card:hover .card-body {
     top: 15% !important;
+  }
+  .card-body .btn-view{
+    font-size: 16px;
+    width: 116px;
   }
 }

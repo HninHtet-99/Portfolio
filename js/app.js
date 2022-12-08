@@ -92,12 +92,12 @@ var entries = [
     { image: 'img/logos/illustrator.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'Illustrator' },
     { image: 'img/logos/jquery.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'jQuery' },
     { image: 'img/logos/js.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'javascript' },
-    { image: 'img/logos/mysql.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'MySQL' },
-    { image: 'img/logos/php.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'php' },
+    // { image: 'img/logos/mysql.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'MySQL' },
+    // { image: 'img/logos/php.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'php' },
     { image: 'img/logos/sass.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'SASS' },
     { image: 'img/logos/vue.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'Vue' },
     { image: 'img/logos/xd.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'XD' },
-    { image: 'img/logos/laravel.svg',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'Laravel' }
+    // { image: 'img/logos/laravel.svg',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'Laravel' }
 ]
 
 var settings = {
