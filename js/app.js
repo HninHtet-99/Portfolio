@@ -11,7 +11,7 @@ $(window).scroll(function(){
 })
 /* chg icon in nav */
 // $('.navbar-toggler').click(function(){
-//     let result = $(".navbar-collapse").hasClass('show');
+//     let result = $(".collapse").hasClass('show');
 //     console.log(result);
 //     if (result) {
 //         $('.menu-icon').addClass('fa-bars').removeClass('fa-xmark')
