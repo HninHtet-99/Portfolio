@@ -102,8 +102,8 @@ var entries = [
 
 var settings = {
     entries: entries,
-    width: 400,
-    height: 400,
+    width: 350,
+    height: 350,
     radius: '80%',
     radiusMin: 60,
     bgDraw: true,
@@ -127,18 +127,6 @@ var settings = {
 
 };
 $( '#skills' ).svg3DTagCloud( settings );
-
-/* flying text */
-LettersRandomPlaces({
-    element: ".about-text",
-    start_delay_time: 80,	
-    delay_type: "sequential",	
-    animation_duration: 1000,	
-    force: 100,	
-    direction: ['x', 'y'],	
-    random_scale: true,	
-    rotate: -1
-})
 
 /* parallel */
 document.addEventListener('mousemove',parallax);
