@@ -51,16 +51,16 @@ function navScroll() {
 }
 navScroll();
 /* draw svg */
-let $doc = $(document),
-        $win = $(window),
-        $svg = $('#drawSvg').drawsvg({
-            duration: 2000,
-        }),
-        max= $doc.height() - $win.height();
-        $win.on('scroll',function(){
-            var p = $win.scrollTop() / max;
-            $svg.drawsvg('progress',p);
-        })
+// let $doc = $(document),
+//         $win = $(window),
+//         $svg = $('#drawSvg').drawsvg({
+//             duration: 2000,
+//         }),
+//         max= $doc.height() - $win.height();
+//         $win.on('scroll',function(){
+//             var p = $win.scrollTop() / max;
+//             $svg.drawsvg('progress',p);
+//         })
 
 /* wow */
 wow = new WOW(
@@ -83,6 +83,23 @@ wow = new WOW(
 //     })
     
 // })
+
+/* home section img */
+let homeImg = document.querySelector(".home-img");
+let layer = document.querySelectorAll(".layer");
+homeImg.onmousemove = function(e){
+    let x = e.pageX;
+    let y = e.pageY;
+    layer[0].style.transform = 'translate('+x/100*-7+'px,'+y/100*-7+'px)';
+    layer[1].style.transform = 'translate('+x/100*-6+'px,'+y/100*-6+'px)';
+    layer[2].style.transform = 'translate('+x/100*-3+'px,'+y/100*-3+'px)';
+    layer[3].style.transform = 'translate('+x/100*-1+'px,'+y/100*-1+'px)';
+    layer[4].style.transform = 'translate('+x/100*4+'px,'+y/100*4+'px)';
+    layer[5].style.transform = 'translate('+x/100*7+'px,'+y/100*7+'px)';
+    layer[6].style.transform = 'translate('+x/100*11+'px,'+y/100*11+'px)';
+}
+
+
 /* svg tag cloud */
 var entries = [ 
    
@@ -129,15 +146,15 @@ var settings = {
 $( '#skills' ).svg3DTagCloud( settings );
 
 /* parallel */
-document.addEventListener('mousemove',parallax);
-function parallax(e){
-    document.querySelectorAll(".object").forEach(function(move){
-        let moving_value = move.getAttribute("data-value");
-        let x = (e.clientX * moving_value)/250;
-        let y = (e.clientY * moving_value/250);
-        move.style.transform = "translateX("+ x + "px) translateY(" + y + "px)";
-    })
-}
+// document.addEventListener('mousemove',parallax);
+// function parallax(e){
+//     document.querySelectorAll(".object").forEach(function(move){
+//         let moving_value = move.getAttribute("data-value");
+//         let x = (e.clientX * moving_value)/250;
+//         let y = (e.clientY * moving_value/250);
+//         move.style.transform = "translateX("+ x + "px) translateY(" + y + "px)";
+//     })
+// }
 /* hover img in project section */
 const{ gsap } = window;
         gsap
