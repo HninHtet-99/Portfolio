@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/brands.css"/>
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/solid.css"/>
+</head>
+<body>
+    <section id="project-show" class="project-show container-fluid ">
+        <div class="row">
+            <div class="col-12">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-12 col-md-8 img one">
+                            <img src="./img/projectsImg/Cake-websit.png" class="ione project-section-imgs" alt="">
+                        </div>
+                        <div class="col-12 col-md-4 txt text-1">
+                            <h1>Whitespace is like air.</h1>
+                        </div>
+                    </div>
+                    <div class="row my-5">
+                        <div class="col-12 col-md-4 txt text-2">
+                            <h1>it is necessary for <br> a design to breathe.</h1>
+                        </div>
+                        <div class="col-12 col-md-8 img two">
+                            <img src="./img/projectsImg/IncomeTracker.png" class="itwo project-section-imgs" alt="">
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row my-5">
+                            <div class="col-12 img three">
+                                <h2 class="text-center my-5 ithree">Cake Project Website</h2>
+                                <!-- <img src="./img/projectsImg/ShoppingApp.png" class="ithree project-section-imgs" alt=""> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12 col-md-4 img four">
+
+                            <img src="./img/projectsImg/Cake-websit.png" class="ifour project-section-imgs" alt="">
+                        </div>
+                        <div class="col-12 col-md-3 txt text-3">
+                            <h1>Whitespace is like air.</h1>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <!-- <div class="col-12 col-md-8 txt text-4">
+                            <h1>it is necessary for <br> a design to breathe.</h1>
+                        </div> -->
+                        <div class="col-12 col-md-4 img five">
+                            <img src="./img/projectsImg/IncomeTracker.png" class="ifive project-section-imgs" alt="">
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row my-5">
+                            <div class="col-12 img six">
+                                <h2 class="text-center my-5 isix">
+                                    <div class="d-inline-flex">
+                                        <button class="btn btn-view disabled border-0" type="button">                        
+                                          <a href="#">
+                                            <i class="fa-regular fa-globe"></i>
+                                            Live Demo
+                                          </a>
+                                        </button>
+                                        <button class="btn btn-view" type="button">
+                                          <a href="https://github.com/HninHtet-99/Income-Tracker.git" target="_blank">
+                                            <i class="fa-brands fa-github"></i>
+                                            View Code
+                                          </a>
+                                          
+                                        </button>
+                                      </div>
+                                </h2>
+                                <!-- <img src="./img/projectsImg/ShoppingApp.png" class="isix project-section-imgs" alt=""> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <a href="index.html#projects">Back</a>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/simple-parallax-js/dist/simpleParallax.js"></script>
+    <script>
+        var image = document.getElementsByClassName('ione');
+        new simpleParallax(image,{
+            scale:1.2,
+            orientation: 'right'
+        })
+
+        var image = document.getElementsByClassName('itwo');
+        new simpleParallax(image,{
+            scale:1.6,
+            orientation: 'left'
+        })
+        var text = document.getElementsByClassName('text-2');
+        new simpleParallax(text,{
+            scale:1.6,
+            orientation: 'right',
+            overflow:true
+        })
+
+        var image = document.getElementsByClassName('three');
+        new simpleParallax(image,{
+            orientation: 'right',
+            overflow:true
+        })
+        var image = document.getElementsByClassName('ifour');
+        new simpleParallax(image,{
+            scale:1.6,
+        
+        })
+        var image = document.getElementsByClassName('ifive');
+        new simpleParallax(image,{
+            scale:1.6,
+            orientation: 'right'
+        })
+        var image = document.getElementsByClassName('isix');
+        new simpleParallax(image,{
+            scale:1.6,
+            orientation: 'left'
+        })
+
+        
+    </script>
+    
+</body>
+</html>
