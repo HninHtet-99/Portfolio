@@ -10,16 +10,15 @@ $(window).scroll(function(){
     }
 })
 /* chg icon in nav */
-// $('.navbar-toggler').click(function(){
-//     let result = $(".collapse").hasClass('show');
-//     console.log(result);
-//     if (result) {
-//         $('.menu-icon').addClass('fa-bars').removeClass('fa-xmark')
-//     }else{
-//         $('.menu-icon').addClass('fa-xmark').removeClass('fa-bars')
+$('.navbar-toggler').click(function(){
+    let result = $(".navbar-toggler").hasClass('collapsed');
+    if (result) {
+        $('.menu-icon').addClass('fa-bars').removeClass('fa-xmark')
+    }else{
+        $('.menu-icon').addClass('fa-xmark').removeClass('fa-bars')
 
-//     }
-// })
+    }
+})
 
 /* set avtive */
 function setActive(current) {
@@ -50,17 +49,6 @@ function navScroll() {
     })
 }
 navScroll();
-/* draw svg */
-// let $doc = $(document),
-//         $win = $(window),
-//         $svg = $('#drawSvg').drawsvg({
-//             duration: 2000,
-//         }),
-//         max= $doc.height() - $win.height();
-//         $win.on('scroll',function(){
-//             var p = $win.scrollTop() / max;
-//             $svg.drawsvg('progress',p);
-//         })
 
 /* wow */
 wow = new WOW(
@@ -73,16 +61,6 @@ wow = new WOW(
   }
   )
   wow.init();
-
-/* rotate intro text */
-// $('.intro-txt').on('mousemove',function(e){
-//     centerX = $(this).width()/2;
-//     let moveX = centerX - e.offsetX;
-//     $(this).css({
-//         'transform': "perspective(500px) rotateY("+moveX/30+"deg)"
-//     })
-    
-// })
 
 /* home section img */
 let homeImg = document.querySelector(".home-img");
@@ -109,12 +87,9 @@ var entries = [
     { image: 'img/logos/illustrator.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'Illustrator' },
     { image: 'img/logos/jquery.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'jQuery' },
     { image: 'img/logos/js.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'javascript' },
-    // { image: 'img/logos/mysql.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'MySQL' },
-    // { image: 'img/logos/php.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'php' },
     { image: 'img/logos/sass.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'SASS' },
     { image: 'img/logos/vue.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'Vue' },
     { image: 'img/logos/xd.png',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'XD' },
-    // { image: 'img/logos/laravel.svg',url: '#projects',  width: '50', height: '50', target: '_top', tooltip: 'Laravel' }
 ]
 
 var settings = {
@@ -145,18 +120,9 @@ var settings = {
 };
 $( '#skills' ).svg3DTagCloud( settings );
 
-/* parallel */
-// document.addEventListener('mousemove',parallax);
-// function parallax(e){
-//     document.querySelectorAll(".object").forEach(function(move){
-//         let moving_value = move.getAttribute("data-value");
-//         let x = (e.clientX * moving_value)/250;
-//         let y = (e.clientY * moving_value/250);
-//         move.style.transform = "translateX("+ x + "px) translateY(" + y + "px)";
-//     })
-// }
 /* hover img in project section */
 const{ gsap } = window;
+// gsap.registerPlugin(MotionPathPlugin);
         gsap
         .timeline()
         .set(".menu",{ autoAlpha: 1})
@@ -170,7 +136,7 @@ const{ gsap } = window;
             ease: "expo.out"
         })
         .set(".menu",{
-            PointerEvent:"all"
+            pointerEvent:"all"
         });
         gsap.defaults({
             duration : 0.55,
@@ -179,8 +145,7 @@ const{ gsap } = window;
         const menuItems = document.querySelectorAll(".menu__item");
         menuItems.forEach((item)=>{
             const imgWrapper = item.querySelector(".menu__item-img_wrapper");
-            const imgWrapperBounds = imgWrapper.getBoundingClientRect();
-            let itemBounds = item.getBoundingClientRect;
+            let itemBounds = item.getBoundingClientRect();
             const onMouseEnter = () =>{
                 gsap.set(imgWrapper, {
                     scale: 0.8,
@@ -199,21 +164,23 @@ const{ gsap } = window;
                     rotation: -15,
                 })
             };
-            // const onMouseMove = ({x,y})=>{
-            //     let yOffset = itemBounds.top/imgWrapperBounds.height;
-            //     yOffset = gsap.utils.mapRange(0,1.5,-150,150,yOffset);
-            //     gsap.to(imgWrapper,{
-            //         duration: 1,
-            //         x: Math.abs(x-itemBounds.left)-imgWrapperBounds.width/1.55,
-            //         y: Math.abs(y-itemBounds.top)-imgWrapperBounds.height/2 - yOffset,
-
-
-            //     });
-            // };
             item.addEventListener("mouseenter",onMouseEnter);
             item.addEventListener("mouseleave",onMouseLeave);
-            // item.addEventListener("mousemove",onMouseMove);
             window.addEventListener("resize",()=>{
                 itemBounds = item.getBoundingClientRect();
             })
-        })
+        });
+        /* parallel scrolling */
+        // var title = document.getElementsByClassName('about-image');
+        // new simpleParallax(title, {
+        //     orientation: 'right',
+        //     overflow: true,
+        //     scale: 2
+        // });
+        // var subTitle = document.getElementsByClassName('about-text');
+        // new simpleParallax(subTitle, {
+        //     orientation: 'left',
+        //     overflow: true,
+        //     scale: 2
+        // });
+
