@@ -11,7 +11,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Old Standard TT", serif; */
   font-family: "Playfair Display", serif;
 }
 html {
@@ -30,7 +29,6 @@ body {
 .top-nav-scroll {
   position: fixed;
   background-color: #ffffff10;
-  /* animation: top-nav-animation 1s linear; */
 }
 @keyframes top-nav-animation {
   from {
@@ -47,7 +45,6 @@ body {
 .nav-link {
   padding: 0.5rem 1.1rem !important;
   font-weight: 800;
-  /* color: rgba(255, 255, 255, 0.5); */
   text-transform: uppercase;
 }
 .nav-link::before {

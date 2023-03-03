@@ -122,7 +122,6 @@ $( '#skills' ).svg3DTagCloud( settings );
 
 /* hover img in project section */
 const{ gsap } = window;
-// gsap.registerPlugin(MotionPathPlugin);
         gsap
         .timeline()
         .set(".menu",{ autoAlpha: 1})
@@ -170,17 +169,4 @@ const{ gsap } = window;
                 itemBounds = item.getBoundingClientRect();
             })
         });
-        /* parallel scrolling */
-        // var title = document.getElementsByClassName('about-image');
-        // new simpleParallax(title, {
-        //     orientation: 'right',
-        //     overflow: true,
-        //     scale: 2
-        // });
-        // var subTitle = document.getElementsByClassName('about-text');
-        // new simpleParallax(subTitle, {
-        //     orientation: 'left',
-        //     overflow: true,
-        //     scale: 2
-        // });
 
